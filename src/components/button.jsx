@@ -17,7 +17,7 @@ function ButtonComponent(props){
       {props.children}
     </button>
   }else{
-    return <button 
+    return <button
       type={props.typeButton}
       style={{
         width:"200px"

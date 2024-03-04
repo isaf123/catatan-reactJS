@@ -6,46 +6,26 @@ import NavbarComponent from './components/navbar'
 import FooterComponent from './components/footer'
 import ButtonComponent from './components/button'
 import ButtonComponent2 from './components/button2'
+import { Routes,Route } from 'react-router-dom'
+import AboutPage from './pages/about'
+import ContactPage from './pages/contact'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <> 
     <NavbarComponent idName ={"Isa"}idNumber={2}/>
-    {/* menggunakan kurawa untuk semua jenis data, kecuali string, hanya karakternya saja */}
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Intro React with Vite</h1>
-      <ButtonComponent typeButton="button" ButtonTheme="warning">
-        <span>Save</span>
-      </ButtonComponent>
-      <ButtonComponent typeButton="button">
-        <span style={{color:"red"}}>Isa</span>
-      </ButtonComponent>
+    {/* Iniliasasi route path untuk berpindah-pindah halaman*/}
+    <Routes>
+      <Route element={<AboutPage/>} path='/about'/>
+      <Route element={<ContactPage/>} path='/contact'/>
+    </Routes>
 
-      <ButtonComponent2>
-        edi
-      </ButtonComponent2>
 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>  
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <FooterComponent/>
+    
     </>
   )
 }

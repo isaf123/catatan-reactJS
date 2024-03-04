@@ -1,9 +1,27 @@
 //FUNCTIONAL COMPONENT : metode pembuatan component
+import { Link } from 'react-router-dom'
+import ButtonComponent from './button'
+
 function NavbarComponent(props){
 
-  return (<div>
-    <h1>{props.idName} {props.idNumber} Navbar Component</h1>
-  </div>
+  return (
+    <div 
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap:"10px"
+      }}
+    >
+      <h1>{props.idName}</h1>
+      <div>
+        <Link to="/about">
+          <ButtonComponent>About</ButtonComponent>
+        </Link>
+        <Link to="/contact">
+          <ButtonComponent>Contact</ButtonComponent>
+        </Link>
+      </div>
+    </div>
   )
 }
 
